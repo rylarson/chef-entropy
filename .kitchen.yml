@@ -1,0 +1,50 @@
+---
+driver:
+  require_chef_omnibus: 12.3.0
+  name: vagrant
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: ubuntu-12.04
+  - name: ubuntu-14.04
+
+  - name: debian-7.4
+  - name: debian-8.1
+
+  - name: centos-5.10
+  - name: centos-6.4
+  - name: centos-7.1
+
+  # Oracle linux boxes require virtualbox extension pack
+  - name: oracle-5.11
+    driver:
+      box: oraclelinux-5-x86_64
+      box_url: http://cloud.terry.im/vagrant/oraclelinux-5-x86_64.box
+  - name: oracle-6.5
+    driver:
+      box: oraclelinux-6-x86_64
+      box_url: http://cloud.terry.im/vagrant/oraclelinux-6-x86_64.box
+  - name: oracle-7.0
+    driver:
+      box: oraclelinux-7-x86_64
+      box_url: http://cloud.terry.im/vagrant/oraclelinux-7-x86_64.box
+
+  - name: fedora-18
+    driver:
+      box: fedora-18-x86_64
+      box_url: http://puppet-vagrant-boxes.puppetlabs.com/fedora-18-x64-vbox4210-nocm.box
+  - name: fedora-19
+  - name: fedora-20
+  - name: fedora-21
+
+  - name: opensuse-13.1-x86_64
+  - name: opensuse-12.2-x86_64
+    driver:
+      box: opensuse-12.2-x86_64
+      box_url: http://sourceforge.net/projects/opensusevagrant/files/12.2/opensuse-12.2-32.box/download
+suites:
+  - name: default
+    run_list:
+      - recipe[entropy::default]
