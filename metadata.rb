@@ -15,5 +15,5 @@ supports 'centos', '>= 5.0'
 supports 'oracle', '>= 5.0'
 # We claim rhel support because we work on CentOS but we don't have the ability to test on rhel
 supports 'redhat', '>= 5.0'
-supports 'fedora', '>= 18'
+supports 'fedora', '>= 18.0'
 supports 'suse', '>= 12.2'
