@@ -44,6 +44,9 @@ platforms:
     driver:
       box: opensuse-12.2-x86_64
       box_url: http://sourceforge.net/projects/opensusevagrant/files/12.2/opensuse-12.2-32.box/download
+  - name: sles11sp3
+    driver:
+      box: suse/sles11sp3
 suites:
   - name: default
     run_list:
