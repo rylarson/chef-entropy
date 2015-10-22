@@ -92,8 +92,13 @@ describe 'entropy::default' do
     suse_family_platforms.each do |suse_platform|
       context "on #{suse_platform[:platform]} #{suse_platform[:version]}" do
         let(:platform) { suse_platform }
+        major_version = suse_platform[:version].split('.')[0].to_i
         it { is_expected.to install_package('haveged') }
-        it { is_expected.to start_service('haveged.service') }
+        if major_version < 12
+          it { is_expected.to start_service('haveged') }
+        else
+          it { is_expected.to start_service('haveged.service') }
+        end
       end
     end
   end

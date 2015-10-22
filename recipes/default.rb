@@ -48,7 +48,11 @@ end
 
 def install_suse
   package 'haveged'
-  start_systemd_haveged_service
+  if node['platform_version'].to_i < 12
+    start_sys_v_haveged_service
+  else
+    start_systemd_haveged_service
+  end
 end
 
 if node['platform_family'] == 'rhel'
