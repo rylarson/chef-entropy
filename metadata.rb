@@ -4,9 +4,9 @@ maintainer_email 'ryan.mango.larson@gmail.com'
 license          'MIT'
 description      'Ensures a good source of entropy'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '1.1.0'
+version          '1.1.1'
 
-depends 'yum-epel', '<= 0.6.0'
+depends 'yum-epel', '> 2.0.0'
 depends 'apt', '>= 0.0.0'
 
 supports 'ubuntu', '>= 12.04'
